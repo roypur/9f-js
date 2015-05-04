@@ -14,3 +14,6 @@
 
 - f.decode(str)
     **opposite of f.encode(str)**
+    
+- f.api(data, url, handle)
+    **send data as a x-api header to the server url using cors. The handler returns the response**

@@ -1,4 +1,5 @@
-- f.encode(str)    
+- f.encode(str)
+
 **encodes str and returns the encoded value**
         
             - => -a
@@ -13,4 +14,5 @@
             : => -j
 
 - f.decode(str)
+
 **opposite of f.encode(str)**

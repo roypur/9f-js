@@ -20,3 +20,8 @@
 - **f.api(data, url, handle)**
 
     send data as a x-api header to the server using http-post. The handler returns the response
+    
+#CDN
+You can use rawgit as a cdn using this url:
+
+    https://cdn.rawgit.com/roypur/9f-js/master/9f.001.min.js

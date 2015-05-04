@@ -1,33 +1,41 @@
 var f = new Object();
-
+    
 f.encode = function (str)
 {
-    str = str.replace('-', '-a');    
-    str = str.replace('[', '-b');
-    str = str.replace(']', '-c');
-    str = str.replace('{', '-d');
-    str = str.replace('}', '-e');
-    str = str.replace("'", '-f');
-    str = str.replace('"', '-g');
-    str = str.replace(' ', '-h');
-    str = str.replace(',', '-i');
-    str = str.replace(':', '-j');
+    function rep(x,y) {
+        return str.replace(x,y);   
+    }
+    
+    str = rep('-', '-a');
+    str = rep('[', '-b');
+    str = rep(']', '-c');
+    str = rep('{', '-d');
+    str = rep('}', '-e');
+    str = rep("'", '-f');
+    str = rep('"', '-g');
+    str = rep(' ', '-h');
+    str = rep(',', '-i');
+    str = rep(':', '-j');
 
     return str
 }
 
 f.decode = function (str)
 {
-    str = str.replace('-a', '-');    
-    str = str.replace('-b', '[');
-    str = str.replace('-c', ']');
-    str = str.replace('-d', '{');
-    str = str.replace('-e', '}');
-    str = str.replace('-f', "'");
-    str = str.replace('-g', '"');
-    str = str.replace('-h', ' ');
-    str = str.replace('-i', ',');
-    str = str.replace('-j', ':');
+    function rep(x,y) {
+        return str.replace(x,y);   
+    }
+    
+    str = rep('-a', '-');    
+    str = rep('-b', '[');
+    str = rep('-c', ']');
+    str = rep('-d', '{');
+    str = rep('-e', '}');
+    str = rep('-f', "'");
+    str = rep('-g', '"');
+    str = rep('-h', ' ');
+    str = rep('-i', ',');
+    str = rep('-j', ':');
 
     return str
 }

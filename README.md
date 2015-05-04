@@ -1,4 +1,4 @@
-f.encode(str)
+- f.encode(str)
     
     encodes str and returns the encoded value
         
@@ -13,5 +13,6 @@ f.encode(str)
             , => -i
             : => -j
 
-f.decode(str)
+- f.decode(str)
+
     opposite of f.encode(str)

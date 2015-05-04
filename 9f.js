@@ -45,6 +45,6 @@ f.api = function (data, url, handle)
     var req = new XMLHttpRequest();
     req.open('POST', url, true);
     req.setRequestHeader('x-api', data);
-    req.onreadystatechange = function(ret){handle(ret)};
+    req.onreadystatechange = function(a){console.log(a)}
     req.send();
 }

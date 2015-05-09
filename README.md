@@ -1,5 +1,5 @@
 ##f.encode(str)
-encodes str and returns the encoded value
+Encodes str and returns the encoded value
 
         - => -a
         [ => -b
@@ -13,14 +13,17 @@ encodes str and returns the encoded value
         : => -j
 
 ##f.decode(str)
-opposite of f.encode(str)
+Opposite of f.encode(str)
     
-##f.api(data, url, success, error)
-send data as a x-api header to the server using http-post. the response is sendt to the success callback. if the request fails, the error callback is called.
+##f.api(data, Array[url1,url2..], success, error)
+Send data as a x-api header to the server using http-post. The response is sendt to the success callback. If the request fails, the error callback is called.
+
+If you provide multiple urls, it will stop after the first successful request.
+
 
 ##f.loop(object,function)
-modify every key and value of a object. a string is sendt to the function and the function should return a string.
-example:
+Modify every key and value of a object. A string is sendt to the function and the function should return a string.
+Example:
 
     f.loop({'a n g':"wor-ld"},f.encode)
     
@@ -30,11 +33,11 @@ would return
 
 
 ##f.stringify(object)
-convert object to json.
-encodes characters using f.encode first.
+Convert object to json.
+Encodes characters using f.encode first.
 
 ##f.parse(string)
-opposite of f.stringify
+Opposite of f.stringify
 
 ##CDN
 You can use rawgit as a cdn using this url:

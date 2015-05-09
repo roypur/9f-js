@@ -15,8 +15,8 @@ encodes str and returns the encoded value
 ##f.decode(str)
 opposite of f.encode(str)
     
-##f.api(data, url, handle)
-send data as a x-api header to the server using http-post. The handler returns the response
+##f.api(data, url, success, error)
+send data as a x-api header to the server using http-post. the response is sendt to the success callback. if the request fails, the error callback is called.
 
 ##f.loop(object,function)
 modify every key and value of a object. a string is sendt to the function and the function should return a string.

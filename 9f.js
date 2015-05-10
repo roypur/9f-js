@@ -88,13 +88,13 @@ f.loop = function(obj,func)
     {
         for(var i=0;i<obj.length;i++)
         {
-            if(typeof(obj[i])=="string")
+            if(typeof(obj[i])=="object")
             {
-                obj[i] = func(obj[i]);
+                obj[i]=f.loop(obj[i],func);
             }
             else
             {
-                obj[i]=f.loop(obj[i],func);
+                obj[i]=func(obj[i]);
             }
         }
     }

@@ -2,21 +2,23 @@ var f = new Object();
     
 f.encode = function (str)
 {
-    function rep(x,y) {
-        return str.replace(x,y);   
-    }
+    if(typeof(str)=="string")
+    {
+        function rep(x,y) {
+            return str.replace(x,y);   
+        }
 
-    str = rep(/-/g, '-a');
-    str = rep(/\[/g, '-b');
-    str = rep(/\]/g, '-c');
-    str = rep(/{/g, '-d');
-    str = rep(/}/g, '-e');
-    str = rep(/'/g, '-f');
-    str = rep(/"/g, '-g');
-    str = rep(/ /g, '-h');
-    str = rep(/,/g, '-i');
-    str = rep(/:/g, '-j');
-    
+        str = rep(/-/g, '-a');
+        str = rep(/\[/g, '-b');
+        str = rep(/\]/g, '-c');
+        str = rep(/{/g, '-d');
+        str = rep(/}/g, '-e');
+        str = rep(/'/g, '-f');
+        str = rep(/"/g, '-g');
+        str = rep(/ /g, '-h');
+        str = rep(/,/g, '-i');
+        str = rep(/:/g, '-j');
+    }    
     return str;
 }
 
@@ -68,7 +70,7 @@ f.api = function (data, url, success, error)
             var req = new XMLHttpRequest();
             req.open('POST', requestUrl, true);
             req.setRequestHeader('x-api', data);
-            req.addEventListener("load", function(){success(req.responseText,req.responseUrl);console.log(req)}, false);
+            req.addEventListener("load", function(){success(req.responseText,req.responseUrl)}, false);
             req.addEventListener("error", request, false);
             req.addEventListener("timeout", request, false);
             req.timeout = 500;
@@ -80,29 +82,45 @@ f.api = function (data, url, success, error)
 
 f.loop = function(obj,func)
 {
-    for (var key in obj)
+    if(Array.isArray(obj))
     {
-        if (obj.hasOwnProperty(key))
+        for(var i=0;i<obj.length;i++)
         {
-            if(typeof(obj[key])=="object")
+            if(typeof(obj[i])=="string")
             {
-                nkey=func(key);
-                obj[nkey]=f.loop(obj[key]);
-                if(key!=nkey)
-                {
-                    delete obj[key];
-                }
+                obj[i] = func(obj[i]);
             }
             else
             {
-                nkey=func(key);
-                obj[nkey] = func(obj[key]);
-                if(key!=nkey)
+                obj[i]=f.loop(obj[i],func);
+            }
+        }
+    }
+    else if(typeof(obj)=="object")
+    {
+        for (var key in obj)
+        {
+            if(obj.hasOwnProperty(key))
+            {
+                if(typeof(obj[key])=="object")
                 {
-                    delete obj[key];
+                    nkey=func(key);
+                    obj[nkey]=f.loop(obj[key],func);
+                    if(key!=nkey)
+                    {
+                        delete obj[key];
+                    }
+                }
+                else
+                {
+                    nkey=func(key);
+                    obj[nkey] = func(obj[key]);
+                    if(key!=nkey)
+                    {
+                        delete obj[key];
+                    }
                 }
             }
-            
         }
     }
     return obj;

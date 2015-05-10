@@ -16,7 +16,7 @@ Encodes str and returns the encoded value
 Opposite of f.encode(str)
     
 ##f.api(data, Array[url1,url2..], success, error)
-Send data as a x-api header to the server using http-post. The response is sendt to the success callback. If the request fails, the error callback is called.
+Send data as a x-api header to the server using http-post. The (responseText,responseUrl) is sendt to the success callback. If all of request fails, the error callback is called.
 
 If you provide multiple urls, it will stop after the first successful request.
 
@@ -42,4 +42,4 @@ Opposite of f.stringify
 ##CDN
 You can use rawgit as a cdn using this url:
 
-    https://cdn.rawgit.com/roypur/9f-js/master/min/9f-007.js
+    https://cdn.rawgit.com/roypur/9f-js/master/min/9f-008.js

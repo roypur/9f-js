@@ -22,14 +22,14 @@ If you provide multiple urls, it will stop after the first successful request.
 
 
 ##f.loop(object,function)
-Modify every key and value of a object. A string is sendt to the function and the function should return a string.
+Modify every key and value of a object. The value is sendt to the function and should return the modified variable.
 Example:
 
-    f.loop({'a n g':"wor-ld"},f.encode)
+    f.loop({'h e l l o':["w","o","r","l","d"]},f.encode)
     
 would return
     
-    {a-hn-hg:"wor-ald"}
+    {h-he-hl-hl-ho:["w","o","r","l","d"]}
 
 
 ##f.stringify(object)

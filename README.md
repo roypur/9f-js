@@ -42,4 +42,4 @@ Opposite of f.stringify
 ##CDN
 You can use rawgit as a cdn using this url:
 
-    https://cdn.rawgit.com/roypur/9f-js/master/min/9f-008.js
+    https://cdn.rawgit.com/roypur/9f-js/master/min/9f-009.js

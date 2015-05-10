@@ -29,8 +29,6 @@ f.decode = function (str)
         function rep(x,y) {
             return str.replace(x,y);   
         }
-    
-        str = rep(/-a/g, '-');    
         str = rep(/-b/g, '[');
         str = rep(/-c/g, ']');
         str = rep(/-d/g, '{');
@@ -40,6 +38,7 @@ f.decode = function (str)
         str = rep(/-h/g, ' ');
         str = rep(/-i/g, ',');
         str = rep(/-j/g, ':');
+        str = rep(/-a/g, '-');
     }
     return str;
 }

@@ -18,9 +18,6 @@ f.encode = function (str)
         str = rep(/ /g, '-h');
         str = rep(/,/g, '-i');
         str = rep(/:/g, '-j');
-        str = rep(/\n/g,'-k');
-        str = rep(/\r/g,'-l');
-        str = rep(/\t/g,'-m');
     }    
     return str;
 }
@@ -41,9 +38,6 @@ f.decode = function (str)
         str = rep(/-h/g, ' ');
         str = rep(/-i/g, ',');
         str = rep(/-j/g, ':');
-        str = rep(/-k/g,'\n');
-        str = rep(/-l/g,'\r');
-        str = rep(/-m/g,'\t');
         str = rep(/-a/g, '-');
     }
     return str;

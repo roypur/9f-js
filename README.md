@@ -11,6 +11,9 @@ Encodes str and returns the encoded value
     space => -h
         , => -i
         : => -j
+       \n => -k
+       \r => -l
+       \t => -m
 
 ##f.decode(str)
 Opposite of f.encode(str)

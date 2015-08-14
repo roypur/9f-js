@@ -74,7 +74,7 @@ f.api = function (data, url, success, error)
             req.addEventListener("load", function(){success(req.responseText,req.responseUrl)}, false);
             req.addEventListener("error", request, false);
             req.addEventListener("timeout", request, false);
-            req.timeout = 800;
+            req.timeout = 2000;
             req.send();
             i++;
         }
